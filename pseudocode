@@ -1,0 +1,31 @@
+if source in train stopage
+	if destination in train stopage
+		if yes then
+				if destination is same as path destinatin
+				if destination is not same as path destination
+					change source to the last station it reach
+		else change destination index to previous station
+
+
+
+def CheckTrainPath(source,destination,trainstopage,path,trainlist,i):
+	if source in trainstopage:
+		samedestination = path.index(destination)
+		while(samedestination>path.index(source)):
+			print(samedestination)
+			if path[samedestination] in trainstopage:
+				print(trainstopage)
+				#print(trainlist,i)
+				if(path[samedestination] == destination):
+					print("yes")
+					#print(path,path[samedestination],i)
+					pass
+				else:
+					source= samedestination
+					Train(source,destination,trainlist,path)
+				break
+			else:
+				samedestination = samedestination - 1			
+	else:
+		pass
+
